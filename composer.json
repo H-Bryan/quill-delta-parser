@@ -1,5 +1,5 @@
 {
-    "name": "nadar/quill-delta-parser",
+    "name": "hbryan/quill-delta-parser",
     "description": "A PHP library to parse Quill Deltas into HTML",
     "type": "library",
     "require-dev": {
