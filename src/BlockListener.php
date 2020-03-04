@@ -67,6 +67,13 @@ abstract class BlockListener extends Listener
             $first->while(function (&$index, Line $line) use (&$buffer, $pick, $first) {
                 $index++;
                 $buffer .= $line->getInput();
+                
+                // nothing is rendered properly when wrapped
+                // HACK don't have time for a proper fix, just need the linebreak
+                if ($line->hasEndNewline()) {
+                    $buffer .= "<br/>";
+                }
+                
                 $line->setDone();
                 // if the index of the picked lines is reached or the first element is the picked index.
                 if ($index == $pick->line->getIndex() || $first->getIndex() == $pick->line->getIndex()) {
